@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задания с массивами в JavaScript 2.7</title>
+</head>
+<body>
+    <h1>Задания с массивами в JavaScript 2.7</h1>
+
+    <script>
+        // Задание 1: Найти сумму всех элементов массива
+        function sumArray(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+        let numbers1 = [1, 2, 3, 4, 5];
+        console.log("Сумма массива:", sumArray(numbers1)); // Пример вывода: 15
+
+        // Задание 2: Найти максимальный элемент массива
+        function findMax(arr) {
+            let max = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        let numbers2 = [3, 1, 4, 1, 5, 9];
+        console.log("Максимальный элемент:", findMax(numbers2)); // Пример вывода: 9
+
+        // Задание 3: Фильтрация массива по условию
+        function filterArray(arr) {
+            let evenNumbers = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 === 0) {
+                    evenNumbers.push(arr[i]);
+                }
+            }
+            return evenNumbers;
+        }
+        let numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        console.log("Четные числа:", filterArray(numbers3)); // Пример вывода: [2, 4, 6, 8]
+
+        // Задание 4: Реализация метода массива "map" через цикл
+        function mapArray(arr, callback) {
+            let newArray = [];
+            for (let i = 0; i < arr.length; i++) {
+                newArray.push(callback(arr[i]));
+            }
+            return newArray;
+        }
+        function multiplyByTwo(num) {
+            return num * 2;
+        }
+        let numbers4 = [1, 2, 3, 4, 5];
+        console.log("Умноженные на 2:", mapArray(numbers4, multiplyByTwo)); // Пример вывода: [2, 4, 6, 8, 10]
+
+        // Задание 5: Реализация метода массива "forEach" через цикл
+        function forEachArray(arr, callback) {
+            for (let i = 0; i < arr.length; i++) {
+                callback(arr[i]);
+            }
+        }
+        function printElement(element) {
+            console.log(element);
+        }
+        let numbers5 = [1, 2, 3, 4, 5];
+        console.log("Элементы массива:");
+        forEachArray(numbers5, printElement); // Пример вывода: 1 2 3 4 5 (по одному числу на строку)
+
+        // Задание 6: Развернуть массив
+        function reverseArray(arr) {
+            let reversedArray = [];
+            for (let i = arr.length - 1; i >= 0; i--) {
+                reversedArray.push(arr[i]);
+            }
+            return reversedArray;
+        }
+        let numbers6 = [1, 2, 3, 4, 5];
+        console.log("Развернутый массив:", reverseArray(numbers6)); // Пример вывода: [5, 4, 3, 2, 1]
+    </script>
+</body>
+</html>
